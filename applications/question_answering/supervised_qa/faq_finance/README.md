@@ -1,41 +1,39 @@
-# 保险智能问答
+# Insurance Intelligent Q&A
 
- **目录**
+ **Table of Contents**
 
-* [1. 项目介绍](#项目介绍)
-* [2. 系统特色](#系统特色)
-* [3. 保险智能问答系统方案](#保险问答系统方案)
-* [4. 动手实践——搭建自己的端到端检索式问答系统](#动手实践——搭建自己的端到端检索式问答系统)
-* [5. 模型优化](#模型优化)
-* [6. 参考文献](#参考文献)
+* 1. Project Introduction
+* 2. System Features
+* 3. Insurance Intelligent Q&A System Solution
+* 4. Hands-on Practice - Building Your Own End-to-End Retrieval-based Q&A System
+* 5. Model Optimization
+* 6. References
+<a name="project-introduction"></a>
 
-<a name="项目介绍"></a>
+## 1. Project Introduction
 
-## 1. 项目介绍
+Intelligent Q&A is one of the more direct and efficient ways to obtain information and knowledge. Traditional information retrieval methods intelligently find relevant documents, while intelligent Q&A can directly find accurate answers, greatly saving people's time in searching for information. Q&A can be divided into reading comprehension-based Q&A and retrieval-based Q&A according to technology. Reading comprehension-based Q&A finds corresponding answer fragments in the text, while retrieval-based Q&A matches high-frequency questions and returns the answers to the user. This project belongs to retrieval-based Q&A, which has a wide range of uses in various fields such as search engines, smart hardware such as Xiaodu speakers, intelligent customer service in government, finance, banking, telecommunications, e-commerce, chatbots, etc.
 
-智能问答是获取信息和知识的更直接、更高效的方式之一，传统的信息检索方法智能找到相关的文档，而智能问答能够直接找到精准的答案，极大的节省了人们查询信息的时间。问答按照技术分为基于阅读理解的问答和检索式的问答，阅读理解的问答是在正文中找到对应的答案片段，检索式问答则是匹配高频的问题，然后把答案返回给用户。本项目属于检索式的问答，问答的领域用途很广，比如搜索引擎，小度音响等智能硬件，政府，金融，银行，电信，电商领域的智能客服，聊天机器人等。
+- This solution is a customized solution for specific scenarios, where users can use their own data to train a solution for a particular scenario. In addition, if you want to quickly experience a FAQ intelligent Q&A system, please refer to the implementation of Pipelines.[FAQintelligent](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/pipelines/examples/FAQ)
 
-- 本方案是场景的定制化的方案，用户可以使用自己的数据训练一个特定场景的方案。另外，想快速体验FAQ智能问答系统请参考Pipelines的实现[FAQ智能问答](https://github.com/PaddlePaddle/PaddleNLP/tree/develop/pipelines/examples/FAQ)
+- The detailed tutorial of the project (including data and code implementation) can be found at[aistudioTutorial](https://aistudio.baidu.com/aistudio/projectdetail/3882519)
 
-- 本项目的详细教程请参考（包括数据和代码实现）[aistudio教程](https://aistudio.baidu.com/aistudio/projectdetail/3882519)
+<a name="system-features"></a>
 
-<a name="系统特色"></a>
+## 2. System Features
 
-## 2. 系统特色
+* Low Threshold
+    * Step-by-step building of insurance intelligent Q&A
+    * Construction of insurance intelligent Q&A without the need for similar query-query pair labeled data
+* Good Performance
+    * Industry-leading retrieval pre-training model: RocketQA Dual Encoder
+    * Leading solution for unlabeled data scenarios: retrieval pre-training model + enhanced unsupervised semantic index fine-tuning
+* Fast Performance
+    * Fast vector extraction based on Paddle Inference
+    * Fast query and high-performance indexing based on Milvus
+    * High-performance deployment based on Paddle Serving
 
-+ 低门槛
-    + 手把手搭建检索式保险智能问答
-    + 无需相似 Query-Query Pair 标注数据也能构建保险智能问答
-+ 效果好
-    + 业界领先的检索预训练模型: RocketQA Dual Encoder
-    + 针对无标注数据场景的领先解决方案: 检索预训练模型 + 增强的无监督语义索引微调
-
-+ 性能快
-    + 基于 Paddle Inference 快速抽取向量
-    + 基于 Milvus 快速查询和高性能建库
-    + 基于 Paddle Serving 高性能部署
-
-<a name="保险问答系统方案"></a>
+<a name="insurance-qa-system-solution"></a>
 
 ## 3. 保险智能问答系统方案
 
